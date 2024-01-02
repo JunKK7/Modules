@@ -16,6 +16,8 @@ dependencies {
     implementation libs.spring.jpa
     implementation libs.spring.web
     implementation libs.lombok
+    implementation libs.apache.common.io
+    implementation libs.apache.common.lang
 }
 
 test {
