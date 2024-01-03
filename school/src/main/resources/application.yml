@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/school?currentSchema=public&useSSL=false&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&stringtype=unspecified
+    username: admin
+    password: qhdks@00
+
+  jpa:
+    properties:
+      hibernate:
+        # 사용 DB Dialect (ORM 구현체에서 각 DB마다 DML, DDL 조금씩 상이하기 때문)
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # 쿼리에 주석을 포함시킨다.
+        use_sql_comments: true
+        # 쿼리를 이쁘게 정렬시킨다.
+        format_sql: true
+        # SQL 쿼리를 출력해준다.
+        show_sql: true
+    hibernate:
+      # Application 시작시 마다 테이블을 지우고 생성한다.
+      ddl-auto: create-drop
