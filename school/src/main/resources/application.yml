@@ -18,4 +18,4 @@ spring:
         show_sql: true
     hibernate:
       # Application 시작시 마다 테이블을 지우고 생성한다.
-      ddl-auto: create-drop
+      ddl-auto: create

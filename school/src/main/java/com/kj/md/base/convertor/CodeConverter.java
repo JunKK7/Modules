@@ -9,16 +9,6 @@ import java.lang.reflect.Type;
 
 @Converter
 public class CodeConverter<T extends Enum<T> & CommonCode> implements AttributeConverter<T, Integer> {
-
-    private final Class<T> tClass;
-
-    @SuppressWarnings("unchecked")
-    public CodeConverter() {
-        Type type = getClass().getGenericSuperclass();
-        ParameterizedType paramType = (ParameterizedType) type;
-        this.tClass = (Class<T>) paramType.getActualTypeArguments()[0];
-    }
-
     @Override
     public Integer convertToDatabaseColumn(T attribute) {
         return attribute.getCode();
@@ -26,6 +16,9 @@ public class CodeConverter<T extends Enum<T> & CommonCode> implements AttributeC
 
     @Override
     public T convertToEntityAttribute(Integer dbData) {
-        return StudentCode.enumByCode(tClass, dbData);
+        Type type = getClass().getGenericSuperclass();
+        ParameterizedType paramType = (ParameterizedType) type;
+        Class<T> clz = (Class<T>) paramType.getActualTypeArguments()[0];
+        return StudentCode.enumByCode(clz, dbData);
     }
 }
