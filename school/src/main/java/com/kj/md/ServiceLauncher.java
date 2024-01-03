@@ -16,7 +16,6 @@ public class ServiceLauncher
 
     public static void main(String[] args)
     {
-        //"spring.config.name:ovp-authentication",
         context = new SpringApplicationBuilder(ServiceLauncher.class)
             .properties("application").run(args);
 
