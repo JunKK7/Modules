@@ -1,4 +1,4 @@
-package com.kj.md.student.service;
+package com.kj.md.business.student.service;
 
 import com.kj.md.base.code.StudentCode.GENDER;
 import com.kj.md.base.domain.student.Student;
