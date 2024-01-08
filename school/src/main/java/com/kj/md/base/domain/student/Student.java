@@ -35,6 +35,6 @@ public class Student extends BaseDomain
 
     private Integer age;
 
-    @OneToMany
+    @OneToMany(mappedBy = "classInformationId.student")
     private List<ClassInformation> classInformationList;
 }
