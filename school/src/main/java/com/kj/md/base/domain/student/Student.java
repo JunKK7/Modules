@@ -36,5 +36,6 @@ public class Student extends BaseDomain
     private Integer age;
 
     @OneToMany(mappedBy = "classInformationId.student")
+    @ToString.Exclude
     private List<ClassInformation> classInformationList;
 }
